@@ -11,7 +11,7 @@ export function Header() {
   const menuItems = [
     { href: "https://docs.brewfather.app/changelog", label: "Changelog" },
     { href: "https://github.com/warpkode/brewfather-app/issues", label: "Issue tracker" },
-    { href: "https://discord.gg/invite/brewfather", label: "Community" },
+    { href: "https://discord.gg/WwBXhrUVeK", label: "Community" },
     { href: "https://docs.brewfather.app/", label: "Docs" },
   ];
 
