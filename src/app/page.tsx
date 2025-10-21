@@ -218,24 +218,43 @@ export default function Home() {
                 {[
                   { name: "Tilt", url: "https://docs.brewfather.app/integrations/tilt-hydrometer", icon: "/images/devices/tilt-logo.png" },
                   { name: "Brewtools", url: "https://docs.brewfather.app/integrations/brewtools", icon: "/images/devices/brewtools.png" },
-                  { name: "RAPT Cloud", url: "https://docs.brewfather.app/integrations/rapt", icon: "/images/devices/rapt.svg" },
+                  { name: "RAPT Cloud", url: "https://docs.brewfather.app/integrations/rapt", icon: "/images/devices/rapt.svg", iconDark: "/images/devices/rapt-dark.svg" },
                   { name: "SmartPID", url: "https://docs.brewfather.app/integrations/smartpid", icon: "/images/devices/smartpid.png" },
-                  { name: "MyBrewbot", url: "https://docs.brewfather.app/integrations/mybrewbot", icon: "/images/devices/mybrewbot.png" },
+                  { name: "MyBrewbot", url: "https://docs.brewfather.app/integrations/mybrewbot", icon: "/images/devices/mybrewbot.png", needsBg: true },
                   { name: "Brewbrain", url: "https://docs.brewfather.app/integrations/float-hydrometer", icon: "/images/devices/float.svg" },
-                  { name: "iSpindel", url: "https://docs.brewfather.app/integrations/ispindel", icon: "/images/devices/iSpindel.svg" },
-                  { name: "Grainfather", url: "https://docs.brewfather.app/integrations/grainfather", icon: "/images/devices/controlboxm.svg" },
-                  { name: "Custom", url: "https://docs.brewfather.app/integrations/custom-stream", icon: "/images/devices/customdevice.svg" },
+                  { name: "iSpindel", url: "https://docs.brewfather.app/integrations/ispindel", icon: "/images/devices/iSpindel.svg", iconDark: "/images/devices/iSpindel-dark.svg" },
+                  { name: "Grainfather", url: "https://docs.brewfather.app/integrations/grainfather", icon: "/images/devices/controlboxm.svg", iconDark: "/images/devices/controlboxm-dark.svg" },
+                  { name: "Custom", url: "https://docs.brewfather.app/integrations/custom-stream", icon: "/images/devices/customdevice.svg", iconDark: "/images/devices/customdevice-dark.svg" },
                 ].map((device) => (
                   <Link key={device.name} href={device.url}>
                     <Card className="p-4 text-center hover:shadow-lg transition-shadow h-full flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 relative flex items-center justify-center bg-white dark:bg-white rounded-lg p-2">
-                        <Image
-                          src={device.icon}
-                          alt={device.name}
-                          width={64}
-                          height={64}
-                          className="object-contain max-w-full max-h-full"
-                        />
+                      <div className={`w-16 h-16 relative flex items-center justify-center rounded-lg p-2 ${device.needsBg ? 'bg-muted/60 dark:bg-white/30' : ''}`}>
+                        {device.iconDark ? (
+                          <>
+                            <Image
+                              src={device.icon}
+                              alt={device.name}
+                              width={64}
+                              height={64}
+                              className="object-contain max-w-full max-h-full block dark:hidden"
+                            />
+                            <Image
+                              src={device.iconDark}
+                              alt={device.name}
+                              width={64}
+                              height={64}
+                              className="object-contain max-w-full max-h-full hidden dark:block"
+                            />
+                          </>
+                        ) : (
+                          <Image
+                            src={device.icon}
+                            alt={device.name}
+                            width={64}
+                            height={64}
+                            className="object-contain max-w-full max-h-full"
+                          />
+                        )}
                       </div>
                       <span className="font-medium">{device.name}</span>
                     </Card>
