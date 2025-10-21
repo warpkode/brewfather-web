@@ -20,11 +20,11 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center z-50">
           <Image
-            src="/images/logo_full.png"
+            src="/images/text-logo.png"
             alt="Brewfather"
-            width={150}
-            height={40}
-            className="h-8 w-auto"
+            width={180}
+            height={35}
+            className="h-7 md:h-8 w-auto"
           />
         </Link>
 
