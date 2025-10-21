@@ -1,0 +1,9 @@
+# Firebase App Hosting configuration for Next.js
+runConfig:
+  runtime: nodejs22
+  # Specify the build directory
+  outputDir: .next
+
+env:
+  - variable: NODE_ENV
+    value: production
