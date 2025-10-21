@@ -3,41 +3,49 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { CheckIcon } from "lucide-react";
+import { CheckIcon, PlayCircle, Beer, Zap, Circle } from "lucide-react";
+import { Header } from "@/components/header";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center px-6 py-16 md:py-24 text-center">
-        <Link href="https://web.brewfather.app/">
-          <Image
-            src="/images/logo.png"
-            alt="Brewfather Logo"
-            width={300}
-            height={150}
-            priority
-            className="mb-8 w-64 md:w-96"
-          />
-        </Link>
+    <>
+      <Header />
+      <main className="flex min-h-screen flex-col pt-20">
+        {/* Hero Section */}
+        <section className="flex flex-col items-center justify-center px-6 py-16 md:py-24 text-center">
+          <div className="mb-8 bg-[#30323d] rounded-2xl p-8">
+            <Image
+              src="/images/icon.png"
+              alt="Brewfather Icon"
+              width={100}
+              height={100}
+              priority
+              className="w-20 h-20"
+            />
+          </div>
 
-        <h1 className="text-3xl md:text-5xl font-bold mb-8 max-w-4xl">
-          Powerful and easy to use tool for your brewing needs
-        </h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-8 max-w-4xl">
+            Powerful and easy to use tool<br />for your brewing needs
+          </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-          <Link href="https://web.brewfather.app/">
-            <Button size="lg" className="text-lg px-8">
-              Get Started
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <Link href="https://web.brewfather.app/">
+              <Button size="lg" className="text-base px-10 py-6 font-semibold uppercase tracking-wide">
+                Get Started
+              </Button>
+            </Link>
+
+            <Link href="https://docs.brewfather.app/">
+              <Button size="lg" variant="outline" className="text-base px-10 py-6 font-semibold uppercase tracking-wide">
+                Learn More
+              </Button>
+            </Link>
+          </div>
+
+          <Link href="https://youtu.be/s1ZlDfQRXy4" className="flex items-center gap-2 text-primary hover:underline mb-8">
+            <PlayCircle className="w-5 h-5" />
+            <span>Watch walkthrough video</span>
           </Link>
-
-          <Link href="https://docs.brewfather.app/">
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              Learn More
-            </Button>
-          </Link>
-        </div>
 
         <div className="flex flex-col items-center gap-4 mt-8">
           <div className="flex flex-wrap justify-center gap-4">
@@ -73,28 +81,40 @@ export default function Home() {
       </section>
 
       {/* Three Points Section */}
-      <section className="px-6 py-16 bg-muted/50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 md:gap-16">
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-6 bg-[#30323d] rounded-full p-6 w-24 h-24 flex items-center justify-center">
+              <div className="relative">
+                <Circle className="w-12 h-12 text-[#f9a825]" strokeWidth={2} />
+                <Circle className="w-8 h-8 text-[#f9a825] absolute top-2 left-2" strokeWidth={2} />
+              </div>
+            </div>
             <h2 className="text-2xl font-bold mb-4">Simple</h2>
             <p className="text-muted-foreground">
-              Easily create and manage your recipes. Keep track of all the details in your batches and your ingredients inventory.
+              Easily create and manage your recipes.<br />Keep track of all the details in your batches and your ingredients inventory.
             </p>
-          </Card>
+          </div>
 
-          <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-6 bg-[#30323d] rounded-full p-6 w-24 h-24 flex items-center justify-center">
+              <Beer className="w-12 h-12 text-[#f9a825]" strokeWidth={2} />
+            </div>
             <h2 className="text-2xl font-bold mb-4">Craft</h2>
             <p className="text-muted-foreground">
               Craft recipes in conformity with style guidelines. Get calculated stats for your recipes and batches.
             </p>
-          </Card>
+          </div>
 
-          <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-6 bg-[#30323d] rounded-full p-6 w-24 h-24 flex items-center justify-center">
+              <Zap className="w-12 h-12 text-[#f9a825]" strokeWidth={2} fill="#f9a825" />
+            </div>
             <h2 className="text-2xl font-bold mb-4">Utility</h2>
             <p className="text-muted-foreground">
               Works on any device with a browser. Import and export recipes. Monitor your fermentation with connected devices.
             </p>
-          </Card>
+          </div>
         </div>
       </section>
 
@@ -369,6 +389,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }
