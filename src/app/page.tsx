@@ -1,103 +1,374 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { CheckIcon } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="flex min-h-screen flex-col">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center px-6 py-16 md:py-24 text-center">
+        <Link href="https://web.brewfather.app/">
+          <Image
+            src="/images/logo.png"
+            alt="Brewfather Logo"
+            width={300}
+            height={150}
+            priority
+            className="mb-8 w-64 md:w-96"
+          />
+        </Link>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <h1 className="text-3xl md:text-5xl font-bold mb-8 max-w-4xl">
+          Powerful and easy to use tool for your brewing needs
+        </h1>
+
+        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+          <Link href="https://web.brewfather.app/">
+            <Button size="lg" className="text-lg px-8">
+              Get Started
+            </Button>
+          </Link>
+
+          <Link href="https://docs.brewfather.app/">
+            <Button size="lg" variant="outline" className="text-lg px-8">
+              Learn More
+            </Button>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+        <div className="flex flex-col items-center gap-4 mt-8">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="https://apps.apple.com/us/app/brewfather/id1488585822">
+              <Image
+                src="/images/badge-ios.png"
+                alt="Download on App Store"
+                width={150}
+                height={50}
+                className="h-12 w-auto"
+              />
+            </Link>
+            <Link href="https://play.google.com/store/apps/details?id=com.warpkode.brewfather">
+              <Image
+                src="/images/badge-android.png"
+                alt="Get it on Google Play"
+                width={150}
+                height={50}
+                className="h-12 w-auto"
+              />
+            </Link>
+          </div>
+          <Link href="https://web.brewfather.app">
+            <Image
+              src="/images/pwa-launch-54.png"
+              alt="Progressive Web App"
+              width={54}
+              height={54}
+              className="h-14 w-14"
+            />
+          </Link>
+        </div>
+      </section>
+
+      {/* Three Points Section */}
+      <section className="px-6 py-16 bg-muted/50">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+          <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+            <h2 className="text-2xl font-bold mb-4">Simple</h2>
+            <p className="text-muted-foreground">
+              Easily create and manage your recipes. Keep track of all the details in your batches and your ingredients inventory.
+            </p>
+          </Card>
+
+          <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+            <h2 className="text-2xl font-bold mb-4">Craft</h2>
+            <p className="text-muted-foreground">
+              Craft recipes in conformity with style guidelines. Get calculated stats for your recipes and batches.
+            </p>
+          </Card>
+
+          <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+            <h2 className="text-2xl font-bold mb-4">Utility</h2>
+            <p className="text-muted-foreground">
+              Works on any device with a browser. Import and export recipes. Monitor your fermentation with connected devices.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      {/* Screens Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <Link href="https://web.brewfather.app/">
+            <Image
+              src="/images/responsive_mdx.jpg"
+              alt="Brewfather Screens"
+              width={1200}
+              height={800}
+              className="w-full rounded-lg shadow-xl"
+            />
+          </Link>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="px-6 py-16 bg-muted/50">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-lg mb-8 text-center max-w-4xl mx-auto">
+            Brewfather utilizes the latest technology to bring you <strong>the best brewing software</strong> available.
+            Run it in any modern browser and mobile device. Work <strong>offline</strong> with automatic <strong>synchronization</strong> when
+            you get back online. Combining a <strong>powerful recipe designer</strong> with intuitive batch tracking and inventory
+            management to make your brew-day easier. <strong>Integrated</strong> with many popular devices.{" "}
+            <Link href="https://web.brewfather.app/" className="font-bold underline">
+              Get started today!
+            </Link>
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {[
+              "Multi device support",
+              "Multiple languages supported",
+              "Offline support",
+              "Automatic synchronization",
+              "Recipe Designer",
+              "Recipe Library",
+              "Batch Tracking",
+              "Mash and sparge water calculator",
+              "Recipe Sharing",
+              "Brew Timer",
+              "Water profile + pH estimate",
+              "Style Guidelines",
+              "Recipe Scaling",
+              "Inventory Management",
+              "Cost Tracking",
+              "BeerXML import/export",
+              "Tilt Hydrometer integration",
+              "Plaato Airlock integration",
+              "Brewtools integration",
+              "iSpindel integration",
+              "SmartPID integration",
+              "MyBrewbot integration",
+              "BrewPiLess integration",
+              "Brewbrain Float integration",
+              "Grainfather integration",
+              "RAPT Cloud integration",
+            ].map((feature, index) => (
+              <div key={index} className="flex items-start gap-2">
+                <CheckIcon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className={feature.includes("much much more") ? "font-bold" : ""}>
+                  {feature}
+                </span>
+              </div>
+            ))}
+            <div className="flex items-start gap-2">
+              <CheckIcon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+              <span className="font-bold">...and much much more!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Device Integrations Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <p className="text-lg mb-4">
+                Brewfather connects with many devices for fermentation logging, brew automation process control and more...
+              </p>
+              <p className="text-lg mb-8">
+                Learn how Brewfather seamlessly integrates with:
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {[
+                  { name: "Tilt", url: "https://docs.brewfather.app/integrations/tilt-hydrometer" },
+                  { name: "Brewtools", url: "https://docs.brewfather.app/integrations/brewtools" },
+                  { name: "RAPT Cloud", url: "https://docs.brewfather.app/integrations/rapt" },
+                  { name: "Plaato", url: "https://docs.brewfather.app/integrations/plaato/airlock" },
+                  { name: "SmartPID", url: "https://docs.brewfather.app/integrations/smartpid" },
+                  { name: "MyBrewbot", url: "https://docs.brewfather.app/integrations/mybrewbot" },
+                  { name: "Brewbrain", url: "https://docs.brewfather.app/integrations/float-hydrometer" },
+                  { name: "iSpindel", url: "https://docs.brewfather.app/integrations/ispindel" },
+                  { name: "Floaty", url: "https://docs.brewfather.app/integrations/floaty-hydrometer" },
+                  { name: "Grainfather", url: "https://docs.brewfather.app/integrations/grainfather" },
+                  { name: "Custom", url: "https://docs.brewfather.app/integrations/custom-stream" },
+                ].map((device) => (
+                  <Link key={device.name} href={device.url}>
+                    <Card className="p-4 text-center hover:shadow-lg transition-shadow h-full">
+                      <span className="font-medium">{device.name}</span>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="order-1 md:order-2">
+              <Link href="https://web.brewfather.app/">
+                <Image
+                  src="/images/chart_example_2.png"
+                  alt="Brewfather Fermentation Chart"
+                  width={800}
+                  height={600}
+                  className="w-full rounded-lg shadow-xl"
+                />
+              </Link>
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                Live fermentation chart with device integrations
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recipe Library Section */}
+      <section className="px-6 py-16 bg-muted/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-lg font-bold mb-6">
+                Discover and brew quality recipes added by the Brewfather community
+              </p>
+              <div className="space-y-3 mb-8">
+                {[
+                  "Thousands of quality recipes available for you",
+                  "Instant and powerful search capabilities",
+                  "Browse styles and get suggestions for recipes to brew",
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <CheckIcon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-lg mb-4">
+                Do you want to take a look on what Brewfather has to offer?
+              </p>
+              <Link href="https://web.brewfather.app/">
+                <Button variant="outline" size="lg">
+                  Join for free today!
+                </Button>
+              </Link>
+            </div>
+
+            <div>
+              <Link href="https://web.brewfather.app/">
+                <Image
+                  src="/images/recipe_library_web.jpg"
+                  alt="Brewfather Recipe Library"
+                  width={800}
+                  height={600}
+                  className="w-full rounded-lg shadow-xl"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-card p-8 rounded-lg shadow-lg border">
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              Stay up to date, join the Brewfather newsletter!
+            </h3>
+            <form
+              action="https://app.us18.list-manage.com/subscribe/post?u=32f226b8ca31bef549e6ffc7a&amp;id=e48be3e1de"
+              method="post"
+              target="_blank"
+              className="space-y-4"
+            >
+              <Input
+                type="email"
+                name="EMAIL"
+                placeholder="Email Address"
+                required
+                className="w-full"
+              />
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  Brewfather will use the information you provide on this form to be in touch with you and to provide updates and marketing.
+                </p>
+                <label className="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    name="gdpr[34517]"
+                    value="Y"
+                    defaultChecked
+                    className="rounded"
+                  />
+                  Email
+                </label>
+                <p className="text-xs text-muted-foreground">
+                  You can change your mind at any time by clicking the unsubscribe in any email you receive, or by contacting us at hello@brewfather.app.
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  We use MailChimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to MailChimp for processing.{" "}
+                  <Link href="https://mailchimp.com/legal/" className="underline" target="_blank">
+                    Learn more about MailChimp&apos;s privacy practices
+                  </Link>
+                </p>
+              </div>
+              <input type="text" name="b_32f226b8ca31bef549e6ffc7a_e48be3e1de" className="hidden" aria-hidden="true" />
+              <Button type="submit" className="w-full" size="lg">
+                Subscribe
+              </Button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-6 py-12 bg-muted/50 mt-auto">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="text-center md:text-left">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} Brewfather. All rights reserved.
+              </p>
+            </div>
+
+            <div className="flex gap-6">
+              <Link href="https://www.facebook.com/brewfatherapp" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">Facebook</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </Link>
+
+              <Link href="https://twitter.com/brewfatherapp" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">Twitter</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </Link>
+
+              <Link href="https://www.youtube.com/c/Brewfather" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">YouTube</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </Link>
+
+              <Link href="https://www.instagram.com/brewfatherapp" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">Instagram</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+                </svg>
+              </Link>
+
+              <Link href="https://discord.gg/invite/brewfather" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">Discord</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
