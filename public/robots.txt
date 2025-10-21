@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://brewfather.app
+
+# Sitemaps
+Sitemap: https://brewfather.app/sitemap.xml

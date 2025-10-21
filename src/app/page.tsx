@@ -7,8 +7,65 @@ import { CheckIcon, PlayCircle, Beer, Zap, Circle } from "lucide-react";
 import { Header } from "@/components/header";
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Brewfather',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web, iOS, Android',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      description: 'Free to start with premium features available',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '5000',
+    },
+    description: 'Powerful and easy to use brewing software for recipe design, batch tracking, and inventory management.',
+    image: 'https://brewfather.app/images/logo_full.png',
+    url: 'https://brewfather.app',
+    author: {
+      '@type': 'Organization',
+      name: 'Brewfather',
+      url: 'https://brewfather.app',
+      logo: 'https://brewfather.app/images/logo_full.png',
+      sameAs: [
+        'https://www.facebook.com/brewfather/',
+        'https://twitter.com/brewfatherapp',
+        'https://www.youtube.com/c/Brewfather',
+        'https://www.instagram.com/brewfatherapp',
+        'https://discord.gg/WwBXhrUVeK',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'hello@brewfather.app',
+        contactType: 'Customer Support',
+      },
+    },
+    potentialAction: {
+      '@type': 'UseAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://web.brewfather.app',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/MobileWebPlatform',
+          'http://schema.org/IOSPlatform',
+          'http://schema.org/AndroidPlatform',
+        ],
+      },
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="flex min-h-screen flex-col pt-20">
         {/* Hero Section */}
