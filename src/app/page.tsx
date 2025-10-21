@@ -13,14 +13,14 @@ export default function Home() {
       <main className="flex min-h-screen flex-col pt-20">
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-16 md:py-24 text-center">
-          <div className="mb-6 md:mb-8 bg-[#30323d] rounded-2xl p-6 md:p-8">
+          <div className="mb-6 md:mb-8 bg-[#30323d] rounded-2xl p-2 md:p-3">
             <Image
               src="/images/icon.png"
               alt="Brewfather Icon"
-              width={100}
-              height={100}
+              width={160}
+              height={160}
               priority
-              className="w-16 h-16 md:w-20 md:h-20"
+              className="w-28 h-28 md:w-32 md:h-32"
             />
           </div>
 
@@ -48,33 +48,47 @@ export default function Home() {
           </Link>
 
         <div className="flex flex-col items-center gap-4 mt-8">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-4">
             <Link href="https://apps.apple.com/us/app/brewfather/id1488585822">
               <Image
-                src="/images/badge-ios.png"
+                src="/images/badge-ios-black.svg"
                 alt="Download on App Store"
                 width={150}
                 height={50}
-                className="h-12 w-auto"
+                className="h-12 w-auto block dark:hidden"
               />
-            </Link>
-            <Link href="https://play.google.com/store/apps/details?id=com.warpkode.brewfather">
               <Image
-                src="/images/badge-android.png"
-                alt="Get it on Google Play"
+                src="/images/badge-ios-white.svg"
+                alt="Download on App Store"
                 width={150}
                 height={50}
-                className="h-12 w-auto"
+                className="h-12 w-auto hidden dark:block"
+              />
+            </Link>
+            <Link href="https://play.google.com/store/apps/details?id=com.warpkode.brewfather" className="dark:opacity-90 dark:hover:opacity-100 transition-opacity">
+              <Image
+                src="/images/badge-android.svg"
+                alt="Get it on Google Play"
+                width={155}
+                height={60}
+                className="h-[68px] w-auto dark:brightness-110"
               />
             </Link>
           </div>
           <Link href="https://web.brewfather.app">
             <Image
-              src="/images/pwa-launch-54.png"
+              src="/images/pwa-logo-dark.svg"
               alt="Progressive Web App"
-              width={54}
-              height={54}
-              className="h-14 w-14"
+              width={120}
+              height={40}
+              className="h-12 w-auto block dark:hidden"
+            />
+            <Image
+              src="/images/pwa-logo-white.svg"
+              alt="Progressive Web App"
+              width={120}
+              height={40}
+              className="h-12 w-auto hidden dark:block"
             />
           </Link>
         </div>
